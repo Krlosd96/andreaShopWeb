@@ -1,0 +1,578 @@
+{
+  "tienda": "Andrea Shop",
+  "moneda": "USD",
+  "total_productos": 62,
+  "guia_para_agentes": {
+    "descripcion_archivo": "Catálogo de productos extraído del PDF 'Catálogo_andreashopccs_.pdf'. Cada elemento de 'productos' es un producto.",
+    "campos": {
+      "id": "Identificador único en formato slug (minúsculas, sin acentos, con guiones). No cambiar una vez usado.",
+      "categoria": "Categoría para agrupar o filtrar en la web. Añadida al organizar el catálogo; no viene en el PDF.",
+      "nombre": "Nombre del producto para mostrar.",
+      "descripcion": "Texto de descripción tal como aparece en el catálogo.",
+      "precio": "Número en dólares. Si 'precio_desde' es true, es el precio mínimo ('Desde X$').",
+      "precio_desde": "true si el catálogo muestra 'DESDE X$'; false si es precio fijo.",
+      "imagenes": "Lista de rutas de imagen (relativas a la raíz del proyecto). La primera es la principal. Para cambiar la imagen o agregar más, edita esta lista."
+    },
+    "nota_imagenes": "Las rutas son marcadores de posición: guarda cada foto en esa ruta o actualiza el valor. El PDF no incluye archivos de imagen sueltos."
+  },
+  "productos": [
+    {
+      "id": "vibrador-rosa-lengua",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Rosa Lengua",
+      "descripcion": "El vibrador rosa con lengua es un juguete sexual femenino con forma de flor de rosa que incluye una lengüeta de silicona suave y flexible. Simula movimientos orales reales (lame, gira y golpea) combinados con funciones de vibración para la estimulación externa del clítoris o zonas erógenas.",
+      "precio": 15,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-rosa-lengua.jpg"]
+    },
+    {
+      "id": "vibrador-rosa-succionadora",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Rosa Succionadora",
+      "descripcion": "El vibrador en forma de rosa es un juguete sexual discreto que simula un capullo de flor. Ofrece estimulación por ondas de aire o presión sin contacto directo, fabricado en silicona suave, recargable por USB y sumergible, con múltiples modos de intensidad para el clítoris.",
+      "precio": 18,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-rosa-succionadora.jpg"]
+    },
+    {
+      "id": "plug-anal-con-luces",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal con Luces",
+      "descripcion": "Plug anal con luces LED es un juguete erótico con una base o interior iluminado. Cuenta con un diseño cónico y una base ancha de seguridad, fabricado en metal, incluye su control para cambiar los colores de luz.",
+      "precio": 20,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-con-luces.jpg"]
+    },
+    {
+      "id": "vibrador-microfono",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Micrófono",
+      "descripcion": "El vibrador con forma de micrófono es un juguete íntimo clásico con un mango grueso y un cabezal redondo. Ofrece múltiples frecuencias de vibración, sirve para la estimulación externa o corporal y destaca por su diseño ergonómico de fácil agarre.",
+      "precio": 12,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-microfono.jpg"]
+    },
+    {
+      "id": "dildo-con-ventosa",
+      "categoria": "Dildos",
+      "nombre": "Dildo con Ventosa",
+      "descripcion": "Un dildo de silicona con ventosa es un juguete sexual fabricado con silicona suave y segura para el cuerpo. Cuenta con una base de succión firme que se adhiere a superficies lisas para uso sin manos, 18cm insertables (talla M)",
+      "precio": 20,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/dildo-con-ventosa.jpg"]
+    },
+    {
+      "id": "vibrador-sex-angel",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Sex Angel",
+      "descripcion": "El vibrador Sex Angel recargable es un juguete ergonómico de silicona ultra suave y ABS seguro. Cuenta con un motor potente para estimulación del punto G, posee múltiples velocidades y carga USB",
+      "precio": 20,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-sex-angel.jpg"]
+    },
+    {
+      "id": "rosa-succion-doble",
+      "categoria": "Vibradores",
+      "nombre": "Rosa Succión Doble",
+      "descripcion": "El vibrador rosa de succión doble es un juguete íntimo de doble estimulación que combina un cabezal externo en forma de pétalos de rosa con tecnología de ondas de pulso de aire para el clítoris, junto con un eje o mango interno que proporciona vibraciones profundas de manera simultánea",
+      "precio": 35,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/rosa-succion-doble.jpg"]
+    },
+    {
+      "id": "vibrador-bam-bam",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Bam Bam",
+      "descripcion": "El vibrador bam bam con funcionamiento a pila es un juguete íntimo de tipo realista y gran tamaño. Cuenta con unas dimensiones aproximadas de 21 cm de largo y está fabricado en material de silicona",
+      "precio": 16,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-bam-bam.jpg"]
+    },
+    {
+      "id": "vibrador-realista",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Realista",
+      "descripcion": "Vibrador realista de 10 velocidades es un juguete sexual diseñado con una forma anatómica similar a un pene real. Cuenta con 10 modos o ritmos de vibración diferentes, está fabricado con materiales seguros como la silicona médica y suele ser recargable por USB para ofrecer una experiencia cómoda y personalizable, incluye control.",
+      "precio": 50,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-realista.jpg"]
+    },
+    {
+      "id": "vibrador-realista-con-lengua",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Realista con Lengua",
+      "descripcion": "Los vibradores realistas con lengua están diseñados para imitar la textura, flexibilidad y el movimiento de lamedura del sexo oral. Estos juguetes suelen combinar una punta o superficie de silicona médica ultra suave texturizada con motores internos que simulan pulsaciones, movimientos de vaivén o aleteos rápidos.",
+      "precio": 50,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-realista-con-lengua.jpg"]
+    },
+    {
+      "id": "vibrador-con-aleteo",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador con Aleteo",
+      "descripcion": "Un vibrador con función de aleteo (flapping vibrator) es un dispositivo de bienestar íntimo diseñado para simular los movimientos rápidos y rítmicos de una lengua o de sutiles golpeteos, imitando la sensación del sexo oral. A diferencia de los vibradores convencionales que solo oscilan, estos juguetes incorporan una punta o lengüeta de silicona flexible que se mueve de arriba abajo de forma independiente",
+      "precio": 55,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-con-aleteo.jpg"]
+    },
+    {
+      "id": "dildo-fotoluminiscente",
+      "categoria": "Dildos",
+      "nombre": "Dildo Fotoluminiscente",
+      "descripcion": "Un dildo que brilla en la oscuridad es un juguete sexual fabricado con materiales como silicona o TPE que contiene pigmentos fotoluminiscentes. Estos absorben la luz ambiental o solar y la liberan de manera fluorescente en la penumbra para dar un atractivo efecto visual.",
+      "precio": 12,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/dildo-fotoluminiscente.jpg"]
+    },
+    {
+      "id": "vibrador-con-estimulador-de-clitoris",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador con Estimulador de Clítoris",
+      "descripcion": "Un vibrador con estimulador de clítoris es un dispositivo íntimo de doble acción diseñado para brindar estimulación externa e interna de forma simultánea. Combina un eje insertable (a menudo para el punto G) con una pestaña o cabezal externo adaptado para el clítoris mediante vibración o ondas de presión.",
+      "precio": 18,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-con-estimulador-de-clitoris.jpg"]
+    },
+    {
+      "id": "vibrador-lapiz-labial",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador Lápiz Labial",
+      "descripcion": "Un vibrador en forma de lápiz labial es un juguete íntimo de uso externo diseñado para la estimulación del clítoris. Su característica principal es su diseño camuflado y de tamaño compacto (entre 8 y 12 cm), que imita un cosmético tradicional para llevarlo de manera discreta en la cartera o cosmetiquera",
+      "precio": 18,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-lapiz-labial.jpg"]
+    },
+    {
+      "id": "huevo-vibrador-con-succionador",
+      "categoria": "Vibradores",
+      "nombre": "Huevo Vibrador con Succionador",
+      "descripcion": "Huevo vibrador con succionador es un juguete íntimo de doble acción diseñado para brindar estimulación interna (vaginal) y externa (clitoriana) al mismo tiempo. Combina un pequeño huevo vibrador de inserción con una boquilla de ondas de aire para la succión, y muchos modelos avanzados se conectan a control remoto o aplicaciones, ideal para llevarlo a todas partes",
+      "precio": 18,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/huevo-vibrador-con-succionador.jpg"]
+    },
+    {
+      "id": "vibrador-anal-con-luz",
+      "categoria": "Plugs anales",
+      "nombre": "Vibrador Anal con Luz",
+      "descripcion": "Es un juguete ergonómico de silicona que combina estimulación vibratoria y luces LED integradas. Ofrece funciones de vibración con control remoto, diseño seguro con base ancha y efectos visuales para juegos íntimos.",
+      "precio": 25,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-anal-con-luz.jpg"]
+    },
+    {
+      "id": "vagina-realista",
+      "categoria": "Accesorios masculinos",
+      "nombre": "Vagina Realista",
+      "descripcion": "Es un juguete diseñado para imitar la apariencia, textura y temperatura de los genitales femeninos con fines recreativos.",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vagina-realista.jpg"]
+    },
+    {
+      "id": "masturbador-melocoton-masculino",
+      "categoria": "Accesorios masculinos",
+      "nombre": "Masturbador Melocotón Masculino",
+      "descripcion": "El término “melocotón” (o peach en inglés) se utiliza popularmente en el mercado de bienestar sexual para referirse a masturbadores masculinos con texturas internas avanzadas y diseños discretos, inspirados en la suavidad de esta fruta.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/masturbador-melocoton-masculino.jpg"]
+    },
+    {
+      "id": "vibrador-pais-a-pais",
+      "categoria": "Vibradores",
+      "nombre": "Vibrador País a País",
+      "descripcion": "Un vibrador “pais a pais” (también conocido comercialmente como vibrador de larga distancia o internacional) es un juguete sexual diseñado para ser controlado de forma remota a través de una aplicación móvil, sin importar la distancia física entre las dos personas",
+      "precio": 18,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/vibrador-pais-a-pais.jpg"]
+    },
+    {
+      "id": "anillo-retardante",
+      "categoria": "Accesorios masculinos",
+      "nombre": "Anillo Retardante",
+      "descripcion": "Un anillo retardante (también conocido como anillo para el pene) es un accesorio sexual diseñado para colocarse en la base del pene o alrededor de los testículos con el fin de retener parcialmente el flujo sanguíneo y mantener erecciones más firmes y duraderas",
+      "precio": 6,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/anillo-retardante.jpg"]
+    },
+    {
+      "id": "cubiertas-de-pezones",
+      "categoria": "Accesorios",
+      "nombre": "Cubiertas de Pezones",
+      "descripcion": "Las cubiertas de pezones (o cubrepezones) son accesorios adhesivos o de fricción diseñados para ocultar la areola y el pezón. Proporcionan un acabado liso y natural bajo la ropa, siendo ideales para usar con vestidos sin espalda, prendas escotadas, tops sin tirantes o ropa transparente. Estas brillan en la oscuridad.",
+      "precio": 2,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/cubiertas-de-pezones.jpg"]
+    },
+    {
+      "id": "juego-jenga-posiciones-sexuales",
+      "categoria": "Juegos",
+      "nombre": "Juego Jenga Posiciones Sexuales",
+      "descripcion": "El Jenga de posiciones sexuales o erótico combina la dinámica clásica de retirar bloques de madera con retos íntimos escritos en cada pieza. Los jugadores turnan para sacar un bloque, leer la penitencia o postura asignada, cumplirla para salir de la rutina y colocar el bloque arriba hasta que la torre caiga",
+      "precio": 30,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/juego-jenga-posiciones-sexuales.jpg"]
+    },
+    {
+      "id": "anestesia-anal",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Anestesia Anal",
+      "descripcion": "Anestesia: Contienen agentes suaves como la lidocaína para adormecer el área, bajar la sensibilidad y disminuir el dolor, aunque requiere precaución para no lesionar el tejido por falta de dolor natural. Efecto frío: Utilizan componentes que generan una sensación refrescante o mentolada al contacto con la piel. Efecto caliente: Reaccionan al contacto o soplido generando una sensación de calor suave que estimula la circulación local. Normal o neutro: Lubrican de forma estándar sin alterar la temperatura ni adormecer, enfocados en facilitar el movimiento y prevenir fricciones o desgarros.",
+      "precio": 2.5,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/anestesia-anal.jpg"]
+    },
+    {
+      "id": "lenceria-comestible",
+      "categoria": "Comestibles",
+      "nombre": "Lencería Comestible",
+      "descripcion": "La lencería comestible es un producto de confitería con forma de ropa interior que se puede llevar puesto y comer. Inventada en la década de los 70, combina el juego erótico y el sabor dulce. Está diseñada como accesorio íntimo para salir de la rutina en pareja. Fabricada con gelatina suave, caramelo o dulce flexible.",
+      "precio": 15,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lenceria-comestible.jpg"]
+    },
+    {
+      "id": "gomitas-viking",
+      "categoria": "Suplementos",
+      "nombre": "Gomitas Viking",
+      "descripcion": "Las Gomitas Viking (o Gummies Viking) son un conocido suplemento energizante y potenciador sexual unisex formulado con extractos naturales. Se comercializan principalmente para aumentar la libido, combatir el cansancio físico y mejorar el rendimiento íntimo tanto en hombres como en mujeres. Efecto estimulante: Promueven la dilatación de los vasos sanguíneos en la zona genital, lo que ayuda a incrementar el flujo sanguíneo, mejorar la firmeza de la erección en hombres, la lubricación en mujeres y elevar la sensibilidad general.",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/gomitas-viking.jpg"]
+    },
+    {
+      "id": "power-sex-vi-king",
+      "categoria": "Suplementos",
+      "nombre": "Power Sex Vi King",
+      "descripcion": "El Power Sex Vi King es un suplemento comercializado como potenciador sexual de uso masculino y femenino, el cual se distribuye habitualmente en una presentación de 6 sachet que contienen un total de 24 pastillas (4 tabletas por sobre)",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/power-sex-vi-king.jpg"]
+    },
+    {
+      "id": "perfume-feromonas-caballero",
+      "categoria": "Perfumes",
+      "nombre": "Perfume con Feromonas Caballero",
+      "descripcion": "El Perfume con Feromonas SexLove Potion “Adán” es una fragancia masculina de seducción comercializada en presentaciones de 40 ml y orientada a potenciar el magnetismo, la confianza y la atracción física hacia las mujeres. Uso y aplicación: Se recomienda aplicar directamente en los puntos de pulso como el cuello y las muñecas, a una distancia aproximada de 10 cm, para que el calor corporal ayude a proyectar el aroma.",
+      "precio": 20,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/perfume-feromonas-caballero.jpg"]
+    },
+    {
+      "id": "perfume-feromonas-dama",
+      "categoria": "Perfumes",
+      "nombre": "Perfume con Feromonas Dama",
+      "descripcion": "El Perfume con Feromonas SexLove Potion “Eva” es la contraparte femenina de “Adán”, una fragancia diseñada para potenciar la sensualidad, despertar el deseo y llamar la atención en momentos de pasión o citas románticas. Propósito comercial: Está formulado con la intención de atraer a los hombres, aumentar el magnetismo personal de la mujer y aportar una dosis extra de coqueteo y sensualidad",
+      "precio": 20,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/perfume-feromonas-dama.jpg"]
+    },
+    {
+      "id": "spray-oral-garganta-profunda",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Spray Oral Garganta Profunda",
+      "descripcion": "Un spray para sexo oral es un producto íntimo desensibilizante diseñado para adormecer suavemente la garganta, reducir el reflejo nauseoso (arcadas) y facilitar la práctica de la garganta profunda",
+      "precio": 23,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/spray-oral-garganta-profunda.jpg"]
+    },
+    {
+      "id": "lubricante-sexo-oral",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Sexo Oral",
+      "descripcion": "Un lubricante para sexo oral es un gel comestible, generalmente a base de agua, formulado con aromas y sabores frutales o dulces (como fresa, cereza o vainilla) para hacer la experiencia más placentera, sin azúcar y seguro para el consumo humano.",
+      "precio": 4,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-sexo-oral.jpg"]
+    },
+    {
+      "id": "anillo-vibrador-con-estimulador",
+      "categoria": "Accesorios masculinos",
+      "nombre": "Anillo Vibrador con Estimulador",
+      "descripcion": "Un anillo vibrador con estimulador es un juguete sexual flexible que se coloca en la base del pene. Su función es mantener la erección por más tiempo al frenar de forma leve el flujo sanguíneo y brindar vibración directa para estimular zonas sensibles como el clítoris durante la relación",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/anillo-vibrador-con-estimulador.jpg"]
+    },
+    {
+      "id": "plug-anal-iniciador",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal Iniciador",
+      "descripcion": "El plug anal de silicona talla S es un juguete sexual pequeño e ideal para principiantes. Mide cerca de 6 a 7 cm de largo y de 2 a 3 cm de grosor. Cuenta con punta cónica para una fácil entrada, base segura y se usa con lubricante a base de agua",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-iniciador.jpg"]
+    },
+    {
+      "id": "plug-anal-talla-m",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal Talla M",
+      "descripcion": "Plug anal de silicona talla M con diseño de base o anillo para los dedos es un juguete de tamaño intermedio (con un diámetro aproximado de 3.2 cm a 3.5 cm y una longitud insertable de unos 8 cm a 9.5 cm), el cual cuenta con un soporte ergonómico para asegurar un agarre firme, control de profundidad y una extracción segura",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-talla-m.jpg"]
+    },
+    {
+      "id": "plug-anal-con-abertura-dedo",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal con Abertura Dedo",
+      "descripcion": "Plug anal con abertura o diseño hueco hecho de silicona es un juguete de diseño cónico que cuenta con un canal o espacio central abierto. Este orificio permite la introducción de un dedo para estimular la zona de manera directa, combinar el juego táctil o barrer el control durante la inserción",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-con-abertura-dedo.jpg"]
+    },
+    {
+      "id": "plug-anal-colita-de-gato-talla-s",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal Colita de Gato Talla S",
+      "descripcion": "Un plug anal con cola de gato de silicona y base desenroscable es un juguete erótico diseñado para el juego de roles (roleplay). Combina un estimulador anal con un accesorio estético intercambiable. Base desenroscable: Permite separar la cola de pelo sintético del plug de silicona. Esto facilita enormemente la limpieza y desinfección del juguete, y permite usar el plug de forma independiente o intercambiarlo por otros accesorios.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-colita-de-gato-talla-s.jpg"]
+    },
+    {
+      "id": "plug-anal-colita-de-zorrillo-talla-s",
+      "categoria": "Plugs anales",
+      "nombre": "Plug Anal Colita de Zorrillo Talla S",
+      "descripcion": "El plug anal con cola de zorro de metal es un juguete sexual diseñado para la estimulación rectal que combina una base ergonómica de acero inoxidable o aluminio con un accesorio estético de felpa sintética",
+      "precio": 9,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/plug-anal-colita-de-zorrillo-talla-s.jpg"]
+    },
+    {
+      "id": "lubricante-kailin-fresa",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Kailin Fresa",
+      "descripcion": "El lubricante íntimo Kailin sabor fresa es un gel comestible a base de agua de 30 ml. Ofrece un dulce aroma y sabor a fresa, diseñado para juegos previos, masajes sensuales y sexo oral, siendo seguro, no tóxico y compatible con preservativos",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-kailin-fresa.jpg"]
+    },
+    {
+      "id": "lubricante-kailin-chicle",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Kailin Chicle",
+      "descripcion": "El lubricante íntimo con sabor a chicle de la marca kailin es un gel comestible a base de agua, diseñado para masajes corporales y para facilitar las relaciones sexuales, incluyendo el sexo oral. Viene en una presentación transparente de 30 ml, no mancha la ropa y es seguro de usar con preservativos y juguetes íntimos",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-kailin-chicle.jpg"]
+    },
+    {
+      "id": "lubricante-kailin-limon",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Kailin Limón",
+      "descripcion": "Es un gel íntimo comestible a base de agua, diseñado para intensificar el placer y facilitar el sexo oral o los masajes. Viene comúnmente en presentaciones de 30 ml, es transparente, de alta viscosidad y aporta un aroma fresco y dulce-ácido.",
+      "precio": 7,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-kailin-limon.jpg"]
+    },
+    {
+      "id": "lubricante-cokelife",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Cokelife",
+      "descripcion": "Los geles lubricantes Cokelife son productos íntimos a base de agua, solubles y de fácil lavado, formulados para brindar suavidad extrema y larga duración. Sirven para usar en jacuzzi.",
+      "precio": 1.5,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-cokelife.jpg"]
+    },
+    {
+      "id": "lubricante-imitacion-del-semen",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Imitación del Semen",
+      "descripcion": "El lubricante imitación de semen es un gel íntimo diseñado para recrear de manera hiperrealista la apariencia, el color blanco semi-transparente y la textura espesa, densa o cremosa del fluido seminal humano",
+      "precio": 1.5,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-imitacion-del-semen.jpg"]
+    },
+    {
+      "id": "estrechante-vaginal",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Estrechante Vaginal",
+      "descripcion": "Un estrechante vaginal es un gel o lubricante de uso íntimo diseñado para generar una sensación temporal de firmeza, tono y ajuste en las paredes o la entrada del canal vaginal. Su objetivo principal es aumentar la fricción y la intensidad de las sensaciones durante la relación sexual.",
+      "precio": 6,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/estrechante-vaginal.jpg"]
+    },
+    {
+      "id": "multiorgasmico-sobre",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Multiorgásmico Sobre",
+      "descripcion": "Es un gel íntimo potenciador del placer femenino, sirve como lubricante altamente hidratante, no seca aumenta el placer y estimula el punto g, contiene 8 gramos.",
+      "precio": 1.5,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/multiorgasmico-sobre.jpg"]
+    },
+    {
+      "id": "lubricantes-con-olor",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricantes con Olor",
+      "descripcion": "Un lubricante en gel es un producto líquido o semiviscoso diseñado para reducir la fricción, aliviar la resequedad y facilitar el deslizamiento durante las relaciones íntimas o exámenes médicos. Es a base de agua, seguro con preservativos y fáciles de limpiar",
+      "precio": 1.0,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricantes-con-olor.jpg"]
+    },
+    {
+      "id": "anillo-de-gomitas-para-pene",
+      "categoria": "Comestibles",
+      "nombre": "Anillo de Gomitas para Pene",
+      "descripcion": "Los anillos de gomitas comestibles para el pene, son juguetes eróticos elaborados con caramelo de goma elástico y saborizado. Están diseñados para el juego previo y el sexo oral, combinando la estimulación visual y de sabor con una textura suave y flexible",
+      "precio": 12,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/anillo-de-gomitas-para-pene.jpg"]
+    },
+    {
+      "id": "caramelos-explosivos",
+      "categoria": "Comestibles",
+      "nombre": "Caramelos Explosivos",
+      "descripcion": "Los caramelos explosivos para sexo oral son cristales de azúcar efervescentes diseñados para parejas que buscan innovar en la intimidad. Al entrar en contacto con la saliva o la humedad, liberan pequeñas burbujas de gas que generan una sensación burbujeante, cosquilleo y un sonido crujiente en la lengua o zonas erógenas",
+      "precio": 2,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/caramelos-explosivos.jpg"]
+    },
+    {
+      "id": "lubricante-comestible",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Lubricante Comestible",
+      "descripcion": "Los lubricantes comestibles son geles íntimos saborizados y seguros para el consumo durante las relaciones sexuales. Están formulados principalmente a base de agua, no contienen azúcares ni parabenos, no manchan y son totalmente compatibles con los preservativos de látex para facilitar el sexo oral, los masajes y los juegos previos.",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lubricante-comestible.jpg"]
+    },
+    {
+      "id": "retardante",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Retardante",
+      "descripcion": "El spray retardante masculino Cokelife (presentación de 12 ml) es un producto diseñado para ayudar a prolongar el tiempo de las relaciones íntimas y retrasar la eyaculación. Su uso es tópico y requiere aplicar 2 o 3 atomizaciones en el pene antes del acto sexual y esperar de 10 a 15 minutos antes de la relacion sexual",
+      "precio": 15,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/retardante.jpg"]
+    },
+    {
+      "id": "multiorgasmico-cokelife",
+      "categoria": "Lubricantes y geles",
+      "nombre": "Multiorgásmico Cokelife",
+      "descripcion": "Es un producto íntimo tópico diseñado para incrementar la sensibilidad, acelerar la excitación y favorecer orgasmos más intensos. Produce un efecto local que combina calor, fresco y ligeras ondas de vibración o pulsación para intensificar el placer táctil. Diseñado para uso externo en el área del clítoris y la zona genital femenina durante los juegos preliminares.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/multiorgasmico-cokelife.jpg"]
+    },
+    {
+      "id": "esposas",
+      "categoria": "Bondage y BDSM",
+      "nombre": "Esposas",
+      "descripcion": "Las esposas de peluche son un accesorio lúdico de bondage suave diseñado para parejas que buscan explorar juegos de rol, sumisión y fetiches de manera cómoda y amigable para principiantes. Cuentan con una estructura interna de metal o cuerina recubierta con un forro de felpa suave para evitar roces molestos.",
+      "precio": 8,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/esposas.jpg"]
+    },
+    {
+      "id": "kit-sado-animal-print",
+      "categoria": "Bondage y BDSM",
+      "nombre": "Kit Sado Animal Print",
+      "descripcion": "Un kit sadomasoquista es un conjunto de accesorios eróticos diseñados para explorar juegos de poder, control, restricción física y estimulación sensorial intensa. Estos sets varían en cantidad de piezas e incluyen elementos como esposas para muñecas o tobillos, cuerdas de amarre, arneses y collares con correa, antifaces, látigos, fustas, floggers o paletas para dar palmadas controladas, bolas de mordaza (gag balls) y pinzas para estimular zonas",
+      "precio": 25,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/kit-sado-animal-print.jpg"]
+    },
+    {
+      "id": "kit-sado-rojo-y-rosado",
+      "categoria": "Bondage y BDSM",
+      "nombre": "Kit Sado Rojo y Rosado",
+      "descripcion": "Un kit sadomasoquista es un conjunto de accesorios eróticos diseñados para explorar juegos de poder, control, restricción física y estimulación sensorial intensa. Estos sets varían en cantidad de piezas e incluyen elementos como esposas para muñecas o tobillos, cuerdas de amarre, arneses y collares con correa, antifaces, látigos, fustas, floggers o paletas para dar palmadas controladas, bolas de mordaza (gag balls) y pinzas para estimular zonas",
+      "precio": 15,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/kit-sado-rojo-y-rosado.jpg"]
+    },
+    {
+      "id": "kit-sado-negro-con-colores",
+      "categoria": "Bondage y BDSM",
+      "nombre": "Kit Sado Negro con Colores",
+      "descripcion": "Un kit sadomasoquista es un conjunto de accesorios eróticos diseñados para explorar juegos de poder, control, restricción física y estimulación sensorial intensa. Estos sets varían en cantidad de piezas e incluyen elementos como esposas para muñecas o tobillos, cuerdas de amarre, arneses y collares con correa, antifaces, látigos, fustas, floggers o paletas para dar palmadas controladas, bolas de mordaza (gag balls) y pinzas para estimular zonas",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/kit-sado-negro-con-colores.jpg"]
+    },
+    {
+      "id": "columpio",
+      "categoria": "Bondage y BDSM",
+      "nombre": "Columpio",
+      "descripcion": "Un columpio sexual para puerta es un accesorio erótico portátil diseñado para colgarse en el borde superior de una puerta resistente sin requerir perforaciones ni instalaciones fijas. Permite explorar nuevas posiciones en el aire o de pie, brindando soporte y sujeción mediante correas y soportes acolchados, se asegura con anclajes o topes planos que se colocan arriba de la puerta y cierran a presión con el peso, sin dañar la estructura",
+      "precio": 30,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/columpio.jpg"]
+    },
+    {
+      "id": "dados-rojos",
+      "categoria": "Juegos",
+      "nombre": "Dados Rojos",
+      "descripcion": "Los dados sexuales son pequeños accesorios de juego para parejas que sirven para romper la rutina. Por lo general, un dado indica una parte del cuerpo y el otro sugiere una acción o una posición erótica específica. Se basan en el azar y la sorpresa para añadir diversión a la intimidad",
+      "precio": 6,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/dados-rojos.jpg"]
+    },
+    {
+      "id": "dados-posiciones",
+      "categoria": "Juegos",
+      "nombre": "Dados Posiciones",
+      "descripcion": "Los dados sexuales son pequeños accesorios de juego para parejas que sirven para romper la rutina. Por lo general, un dado indica una parte del cuerpo y el otro sugiere una acción o una posición erótica específica. Se basan en el azar y la sorpresa para añadir diversión a la intimidad",
+      "precio": 5,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/dados-posiciones.jpg"]
+    },
+    {
+      "id": "lenceria-boddys",
+      "categoria": "Lencería",
+      "nombre": "Lencería Boddys",
+      "descripcion": "La lencería femenina es un conjunto de prendas íntimas finas y elegantes que van más allá de la simple funcionalidad. Combina diseño, delicadeza y sensualidad para resaltar la figura y aumentar la seguridad personal. Preguntar disponibilidad, talla y colores.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lenceria-boddys.jpg"]
+    },
+    {
+      "id": "lenceria-baby-dolls",
+      "categoria": "Lencería",
+      "nombre": "Lencería Baby Dolls",
+      "descripcion": "La lencería femenina es un conjunto de prendas íntimas finas y elegantes que van más allá de la simple funcionalidad. Combina diseño, delicadeza y sensualidad para resaltar la figura y aumentar la seguridad personal. Preguntar disponibilidad, talla y colores.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lenceria-baby-dolls.jpg"]
+    },
+    {
+      "id": "lenceria-trikinis",
+      "categoria": "Lencería",
+      "nombre": "Lencería Trikinis",
+      "descripcion": "La lencería femenina es un conjunto de prendas íntimas finas y elegantes que van más allá de la simple funcionalidad. Combina diseño, delicadeza y sensualidad para resaltar la figura y aumentar la seguridad personal. Preguntar disponibilidad, talla y colores.",
+      "precio": 7,
+      "precio_desde": true,
+      "imagenes": ["assets/img/productos/lenceria-trikinis.jpg"]
+    },
+    {
+      "id": "lenceria-dos-piezas",
+      "categoria": "Lencería",
+      "nombre": "Lencería Dos Piezas",
+      "descripcion": "La lencería femenina es un conjunto de prendas íntimas finas y elegantes que van más allá de la simple funcionalidad. Combina diseño, delicadeza y sensualidad para resaltar la figura y aumentar la seguridad personal. Preguntar disponibilidad, talla y colores.",
+      "precio": 10,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/lenceria-dos-piezas.jpg"]
+    },
+    {
+      "id": "lenceria-tematica",
+      "categoria": "Lencería",
+      "nombre": "Lencería Temática",
+      "descripcion": "La lencería femenina es un conjunto de prendas íntimas finas y elegantes que van más allá de la simple funcionalidad. Combina diseño, delicadeza y sensualidad para resaltar la figura y aumentar la seguridad personal. Preguntar disponibilidad, talla y colores.",
+      "precio": 12,
+      "precio_desde": true,
+      "imagenes": ["assets/img/productos/lenceria-tematica.jpg"]
+    },
+    {
+      "id": "pijamas-sexys",
+      "categoria": "Lencería",
+      "nombre": "Pijamas Sexys",
+      "descripcion": "Los pijamas sexys son prendas de dormir diseñadas para resaltar la figura femenina. Combinan la sensualidad y la comodidad mediante el uso de telas suaves y ligeras como el satén, la seda y detalles de encaje, e incluyen piezas como camisones cortos, conjuntos de tirantes finos y shorts. Preguntar disponibilidad, talla y colores.",
+      "precio": 4,
+      "precio_desde": false,
+      "imagenes": ["assets/img/productos/pijamas-sexys.jpg"]
+    }
+  ]
+}

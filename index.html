@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport: le dice al móvil que use su ancho real (no el "modo PC") -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrea Shop · Tienda para adultos (+18)</title>
+    <meta
+      name="description"
+      content="Andrea Shop: tienda de artículos para adultos en Caracas. Conoce nuestro catálogo, visita nuestra tienda física o haz tu pedido por WhatsApp. Solo para mayores de 18 años."
+    />
+    <meta name="theme-color" content="#b94d7c" />
+
+    <!-- Icono de la pestaña del navegador -->
+    <link rel="icon" href="imagenes/logoTienda-chica.jpeg" />
+
+    <!-- Tipografía Nunito (Google Fonts). Si no carga, se usa Segoe UI (ver estilos.css) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <!-- "sin-scroll" bloquea el fondo mientras está abierta la ventana de edad.
+     main.js la quita cuando la persona confirma ser mayor de edad. -->
+  <body class="sin-scroll">
+    <!-- ================================================================
+       1) VENTANA DE VERIFICACIÓN DE EDAD (+18)
+       Aparece SIEMPRE al entrar (por seguridad). Si la persona ya la
+       aceptó antes, main.js la oculta de inmediato.
+       ================================================================ -->
+    <div
+      class="modal-edad"
+      id="modalEdad"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tituloModalEdad"
+    >
+      <div class="modal-edad__caja">
+        <img
+          class="modal-edad__logo"
+          src="imagenes/logoTienda-chica.jpeg"
+          alt="Logo de Andrea Shop"
+        />
+        <h2 id="tituloModalEdad">Te damos la bienvenida a Andrea Shop</h2>
+        <p>
+          Este sitio ofrece productos para adultos. Necesitamos confirmar tu
+          edad antes de continuar.
+        </p>
+        <p class="modal-edad__pregunta">¿Tienes 18 años o más?</p>
+
+        <div class="modal-edad__botones" id="modalEdadBotones">
+          <button type="button" class="boton boton--principal" id="btnEdadSi">
+            Sí, tengo 18 años o más
+          </button>
+          <button type="button" class="boton boton--fantasma" id="btnEdadNo">
+            No, todavía no
+          </button>
+        </div>
+
+        <!-- Mensaje amable que aparece si la persona es menor de edad -->
+        <p class="modal-edad__nota" id="notaEdadMenor" hidden>
+          ¡Gracias por tu honestidad! 💛 Este sitio es solo para mayores de 18
+          años. Te esperamos cuando cumplas la edad.
+        </p>
+
+        <p class="modal-edad__pista">
+          Solo lo preguntamos una vez por dispositivo.
+        </p>
+      </div>
+    </div>
+
+    <!-- ================================================================
+       2) ZONA SUPERIOR: franja del logo + barra de búsqueda
+       Va "pegajosa" (sticky): se queda visible al hacer scroll.
+       ================================================================ -->
+    <div class="zona-superior">
+      <!-- Franja donde descansa el logo (funciona como enlace al inicio) -->
+      <header class="cabecera">
+        <!-- Botón hamburguesa (solo en móvil): abre el menú lateral -->
+        <button
+          type="button"
+          class="cabecera__btn-menu"
+          id="btnMenu"
+          aria-label="Abrir el menú"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <a
+          class="cabecera__logo"
+          href="#inicio"
+          aria-label="Andrea Shop — ir al inicio"
+        >
+          <img src="imagenes/logoTienda-chica.jpeg" alt="Logo de Andrea Shop" />
+          <span>Andrea Shop</span>
+        </a>
+
+        <!-- Señales de confianza (solo escritorio). main.js llena ciudad y horario -->
+        <div class="cabecera__promos">
+          <span class="cabecera__promo"
+            >📍 <span id="promoCiudad">Tienda física</span></span
+          >
+          <span class="cabecera__promo"
+            >🕒 <span id="promoHorario">Horario</span></span
+          >
+          <span class="cabecera__promo">💬 Pedidos por WhatsApp</span>
+        </div>
+      </header>
+
+      <!-- Barra de búsqueda + filtros (justo debajo de la franja) -->
+      <div class="buscador">
+        <div class="buscador__fila">
+          <!-- Formulario: Enter o el botón "Buscar" termina la búsqueda -->
+          <form class="buscador__formulario" id="formBuscar" role="search">
+            <div class="campo-busqueda">
+              <svg
+                class="campo-busqueda__icono"
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                aria-hidden="true"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+              </svg>
+              <input
+                type="search"
+                id="inputBuscar"
+                list="sugerenciasBuscar"
+                placeholder="Buscar en el catálogo…"
+                aria-label="Buscar productos"
+                autocomplete="off"
+              />
+              <!-- Solo se llena cuando estamos fuera de la vista Catálogo -->
+              <datalist id="sugerenciasBuscar"></datalist>
+            </div>
+            <button type="submit" class="boton boton--principal boton--buscar">
+              Buscar
+            </button>
+          </form>
+
+          <!-- Botón que muestra/oculta los filtros -->
+          <button
+            type="button"
+            class="boton boton--fantasma boton--filtros"
+            id="btnFiltros"
+            aria-expanded="false"
+            aria-controls="filtros"
+          >
+            Filtros
+          </button>
+
+          <!-- Los chips se generan solos con las categorías de js/productos.js -->
+          <div class="filtros" id="filtros"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================================
+       3) ESTRUCTURA PRINCIPAL: menú lateral + contenido
+       El menú es un cajón deslizable con hamburguesa en móvil y escritorio.
+       Inicio y Catálogo son VISTAS: solo se dibuja la elegida. Contacto
+       queda fuera de las vistas y siempre aparece al final.
+       ================================================================ -->
+    <div class="layout">
+      <!-- Fondo oscuro que tapa la página cuando el menú está abierto (móvil) -->
+      <div class="overlay" id="overlay" hidden></div>
+
+      <!-- Menú lateral (sidebar) -->
+      <aside class="sidebar" id="sidebar">
+        <!-- Encabezado del cajón (visible solo en móvil) -->
+        <div class="sidebar__encabezado">
+          <img src="imagenes/logoTienda-chica.jpeg" alt="Logo de Andrea Shop" />
+          <button
+            type="button"
+            class="sidebar__btn-cerrar"
+            id="btnCerrarMenu"
+            aria-label="Cerrar el menú"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Opciones del menú -->
+        <nav class="sidebar__nav" aria-label="Menú principal">
+          <a class="sidebar__enlace" href="#inicio">🏠 Inicio</a>
+          <a class="sidebar__enlace" href="#catalogo">🛍️ Catálogo</a>
+          <a class="sidebar__enlace" href="#contacto"
+            >📍 Contacto y dirección</a
+          >
+          <button type="button" class="sidebar__enlace" id="btnCarritoMenu">
+            🛒 Mi carrito (<span id="cantidadCarritoMenu">0</span>)
+          </button>
+        </nav>
+
+        <!-- Canales de contacto (main.js llena los enlaces con config.js) -->
+        <div class="sidebar__canales">
+          <p class="sidebar__canales-titulo">Hablemos</p>
+          <a
+            class="sidebar__canal sidebar__canal--whatsapp"
+            id="enlaceWhatsAppMenu"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              aria-hidden="true"
+              fill="currentColor"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+            WhatsApp
+          </a>
+          <a
+            class="sidebar__canal sidebar__canal--instagram"
+            id="enlaceInstagramMenu"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle
+                cx="17.3"
+                cy="6.7"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </aside>
+
+      <!-- Cajón del carrito (se abre con el botón flotante o el menú) -->
+      <aside class="carrito" id="carrito" aria-label="Mi carrito" hidden>
+        <div class="carrito__encabezado">
+          <h2 class="carrito__titulo">🛒 Mi carrito</h2>
+          <button
+            type="button"
+            class="carrito__cerrar"
+            id="btnCerrarCarrito"
+            aria-label="Cerrar el carrito"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- main.js dibuja aquí cada producto agregado -->
+        <div class="carrito__lista" id="listaCarrito"></div>
+
+        <div class="carrito__pie">
+          <p class="carrito__total">Total: <strong id="totalCarrito">$0</strong></p>
+          <a
+            class="boton boton--whatsapp carrito__enviar"
+            id="enviarPedido"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            hidden
+          >
+            Enviar pedido por WhatsApp
+          </a>
+          <button
+            type="button"
+            class="boton boton--fantasma carrito__vaciar"
+            id="btnVaciarCarrito"
+            hidden
+          >
+            Vaciar carrito
+          </button>
+        </div>
+      </aside>
+
+      <!-- Contenido principal -->
+      <main>
+        <!-- ============ VISTA: INICIO ============ -->
+        <section class="seccion seccion--inicio" id="inicio">
+          <div class="hero">
+            <span class="etiqueta-18">🔒 +18 · Contenido para adultos</span>
+            <h1 class="hero__titulo">Andrea Shop</h1>
+            <p class="hero__subtitulo">
+              Tu tienda de bienestar e intimidad en Caracas 🌸 Atención cercana,
+              compra discreta y pedidos por WhatsApp.
+            </p>
+            <div class="hero__botones">
+              <a class="boton boton--principal" href="#catalogo"
+                >Ver catálogo</a
+              >
+              <a class="boton boton--fantasma" href="#contacto"
+                >Ubicación y contacto</a
+              >
+            </div>
+          </div>
+
+          <!-- Tarjetas de información rápida -->
+          <div class="tarjetas-info">
+            <article class="tarjeta-info">
+              <span class="tarjeta-info__icono" aria-hidden="true">📍</span>
+              <h3>Tienda física</h3>
+              <p>
+                Estamos en Caracas. Horario:
+                <strong id="textoHorario">…</strong>
+              </p>
+            </article>
+            <article class="tarjeta-info">
+              <span class="tarjeta-info__icono" aria-hidden="true">💬</span>
+              <h3>Asesoría por WhatsApp</h3>
+              <p>
+                Resuelve dudas y arma tu pedido por chat, sin apuro y con total
+                discreción.
+              </p>
+            </article>
+            <article class="tarjeta-info">
+              <span class="tarjeta-info__icono" aria-hidden="true">🤫</span>
+              <h3>Discreción ante todo</h3>
+              <p>Trato respetuoso y confidencial en cada paso de tu compra.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ VISTA: CATÁLOGO (nace oculta) ============ -->
+        <section class="seccion" id="catalogo" hidden>
+          <h2 class="seccion__titulo">Catálogo</h2>
+          <p class="seccion__sub">
+            Productos seleccionados para ti · Precios en dólares ($)
+          </p>
+
+          <p class="resultados" id="contadorProductos" aria-live="polite"></p>
+
+          <p class="sin-resultados" id="sinResultados" hidden>
+            No encontramos productos para «<span id="terminoBuscado"></span>».
+            Prueba con otra palabra o elige otra categoría.
+          </p>
+
+          <!-- Las tarjetas se generan solas desde js/productos.js -->
+          <div class="parrilla-productos" id="parrillaProductos"></div>
+
+          <!-- 4 filas de 3 productos = 12 por tanda -->
+          <div class="cargar-mas" id="cargarMas" hidden>
+            <button type="button" class="boton boton--fantasma" id="btnCargarMas">
+              Cargar más
+            </button>
+            <p class="cargar-mas__nota" id="notaCargarMas" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <!-- ============ SECCIÓN: CONTACTO ============ -->
+        <section class="seccion" id="contacto">
+          <h2 class="seccion__titulo">Contacto y dirección</h2>
+          <p class="seccion__sub">
+            Escríbenos por el canal que prefieras o visítanos en la tienda.
+          </p>
+
+          <div class="tarjetas-contacto">
+            <article class="tarjeta-contacto">
+              <h3>📍 Visítanos</h3>
+              <p>Dirección: <strong id="textoDireccion">…</strong></p>
+              <p>Horario: <strong id="textoHorarioContacto">…</strong></p>
+              <a
+                class="boton boton--fantasma"
+                id="enlaceMaps"
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                Abrir en Google Maps
+              </a>
+            </article>
+
+            <article class="tarjeta-contacto">
+              <h3>💬 WhatsApp</h3>
+              <p>
+                ¿Dudas sobre un producto o quieres hacer tu pedido? Chatea con
+                nosotros y te respondemos a la brevedad.
+              </p>
+              <a
+                class="boton boton--whatsapp"
+                id="enlaceWhatsApp"
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                Chatear por WhatsApp
+              </a>
+            </article>
+
+            <article class="tarjeta-contacto">
+              <h3>📸 Instagram</h3>
+              <p>
+                Síguenos para ver novedades y promociones. Contenido siempre
+                discreto.
+              </p>
+              <a
+                class="boton boton--fantasma"
+                id="enlaceInstagram"
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                Seguir en Instagram
+              </a>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ================================================================
+       4) BOTONES FLOTANTES (carrito y WhatsApp, siempre visibles)
+       main.js le pone el enlace real con el mensaje de bienvenida.
+       ================================================================ -->
+    <!-- Carrito a la izquierda; WhatsApp queda a la derecha -->
+    <button
+      type="button"
+      class="btn-carrito"
+      id="btnCarrito"
+      aria-label="Abrir mi carrito"
+      aria-expanded="false"
+      aria-controls="carrito"
+    >
+      🛒
+      <span class="btn-carrito__cantidad" id="cantidadCarrito">0</span>
+    </button>
+
+    <a
+      class="btn-whatsapp"
+      id="btnFlotanteWhatsApp"
+      href="#"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chatear con nosotros por WhatsApp"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="28"
+        height="28"
+        aria-hidden="true"
+        fill="currentColor"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+        />
+      </svg>
+      <span class="btn-whatsapp__texto">¿Dudas? Escríbenos</span>
+    </a>
+
+    <!-- ================================================================
+       5) PIE DE PÁGINA
+       ================================================================ -->
+    <footer class="pie">
+      <p class="pie__marca">Andrea Shop · Caracas, Venezuela</p>
+      <p>Contenido destinado a mayores de 18 años.</p>
+      <p>© <span id="anioActual">2026</span> Andrea Shop · Hecho con 💛</p>
+    </footer>
+
+    <!-- "defer" hace que los scripts corran cuando el HTML ya terminó de
+       leerse, y en el orden en que están escritos. config.js va primero
+       porque main.js necesita sus datos. -->
+    <script src="js/config.js" defer></script>
+    <script src="js/productos.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
